@@ -15,6 +15,10 @@
     .howtoplay li {
         font-size: 1em !important;
     }
+    
+    .nameInput {
+        font-size: 1em;
+    }
 }
 
 /* Responsive Behavior */
