@@ -10,6 +10,11 @@
     .typing-demo {
         width: 85%;
     }
+
+
+    .howtoplay li {
+        font-size: 1em;
+    }
 }
 
 /* Responsive Behavior */
