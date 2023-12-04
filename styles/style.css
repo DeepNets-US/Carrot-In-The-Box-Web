@@ -1,0 +1,25 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+
+.raise {
+    opacity: 80%;
+    margin: 20px;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    background-color: #8A2BE2;
+}
+
+.howtoplay li {
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+
+/* Neo Text  */
+.neotext {
+    position: relative;
+    padding: 2px;
+    font-weight: 100;
+    font-size: 20px;
+    font-weight: bold;
+}
