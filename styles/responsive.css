@@ -1,0 +1,23 @@
+@media (max-width: 800px) {
+
+    .typing-demo {
+        width: 70%;
+    }
+
+    .typing-demo h1,
+    .typing-demo h5 {
+        font-size: 1.08em;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .typing-demo {
+        width: 85%;
+    }
+
+    .typing-demo h1,
+    .typing-demo h5 {
+        font-size: 0.5em;
+    }
+}

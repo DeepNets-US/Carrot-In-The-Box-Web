@@ -1,0 +1,180 @@
+/* The Cursor Effect */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.star {
+    transform-style: preserve-3d;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    color: red;
+}
+
+.star:before {
+    position: absolute;
+    content: '\2726';
+    color: inherit;
+    inset: 0;
+    text-shadow: 0 0 .8em #ea698b;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    place-content: center;
+    background-image: radial-gradient(circle, #6d23b6 30%, #47126b 70%);
+
+}
+
+/* The Typing Effect */
+.wrapper {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.typing-demo {
+    width: 85vh;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+/* Nav Bar */
+.navbar {
+    background-color: #47126b;
+}
+
+.nav-item a {
+    color: #CAF0F8;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    color: white;
+}
+
+/* Hover over links Effect */
+.link-effect a {
+    color: #797878;
+    margin: 0 20px;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    -moz-transition: ease-out 0.3s;
+    -o-transition: ease-out 0.3s;
+    -webkit-transition: ease-out 0.3s;
+    transition: ease-out 0.3s;
+}
+
+.link-effect a span::before {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.link-effect a span::after {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.link-effect a::before {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.link-effect a::after {
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.link-effect a:hover {
+    color: white;
+}
+
+.link-effect a:hover::before {
+    opacity: 1;
+    right: 5px;
+    top: 5px;
+}
+
+.link-effect a:hover::after {
+    opacity: 1;
+    left: 5px;
+    bottom: 5px;
+}
+
+.link-effect a:hover span::before {
+    opacity: 1;
+    left: 5px;
+    top: 5px;
+}
+
+.link-effect a:hover span::after {
+    opacity: 1;
+    right: 5px;
+    bottom: 5px;
+}
