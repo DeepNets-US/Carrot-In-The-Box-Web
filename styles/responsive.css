@@ -11,9 +11,9 @@
         width: 85%;
     }
 
-
+    .descPara,
     .howtoplay li {
-        font-size: 1em;
+        font-size: 0.8em !important;
     }
 }
 
