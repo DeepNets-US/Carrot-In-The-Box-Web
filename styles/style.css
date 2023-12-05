@@ -58,3 +58,8 @@
 .nameInput:focus {
     border-bottom: 10px solid #F1DDCF;
 }
+
+/* Box Images */
+.carrotBoxes div img{
+    background-color: transparent;
+}
