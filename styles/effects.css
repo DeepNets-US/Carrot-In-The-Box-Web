@@ -204,3 +204,79 @@ body {
     z-index: -1;
     transition: transform .3s ease;
 }
+
+/* Wobble Top */
+@keyframes wobble-top {
+    16.65% {
+        transform: skew(-12deg);
+    }
+
+    33.3% {
+        transform: skew(10deg);
+    }
+
+    49.95% {
+        transform: skew(-6deg);
+    }
+
+    66.6% {
+        transform: skew(4deg);
+    }
+
+    83.25% {
+        transform: skew(-2deg);
+    }
+
+    100% {
+        transform: skew(0);
+    }
+}
+
+.wobble-top {
+    display: inline-block;
+    transform-origin: 0 100%;
+    transform: translateZ(0);
+}
+
+.wobble-top:hover {
+    animation-name: wobble-top;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/* Float Shadow */
+.float-shadow {
+    transition-duration: 0.3s;
+    transition-property: transform;
+    -webkit-tap-highlight-color: #47126B;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    transition-duration: 0.3s;
+    transition-property: transform opacity;
+}
+
+.float-shadow:hover {
+    font-weight: bold;
+    transform: translateY(-5px);
+    /* move the element up by 5px */
+}
+
+.float-shadow:hover:before {
+    opacity: 1;
+    transform: translateY(5px);
+    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}

@@ -33,6 +33,7 @@
 }
 
 /* Name Buttons */
+.carrotBoxes,
 .playerNames {
     display: flex;
     flex-wrap: wrap;
@@ -60,6 +61,3 @@
 }
 
 /* Box Images */
-.carrotBoxes div img{
-    background-color: transparent;
-}
