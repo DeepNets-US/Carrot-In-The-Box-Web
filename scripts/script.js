@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
             player.src = closedBox;
             carrotFound = false;
             msg.innerHTML = `
-            Box closed! ${player1Name.value}, keep your eyes closed!
+            Box closed! ${player1Name.value} open your eyes!
                 <br>
-                <p class="fs-5">Try another box!</p>
+                <p class="fs-5">What will you do?</p>
                 
             `
         }
@@ -64,6 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
         removeElem.classList.remove('activename');
     }
 
+    function removeFunctionalities() {
+        player1Name.classList.remove('activename');
+        player2Name.classList.remove('activename');
+        player1Image.removeEventListener('click', player1ClickHandler);
+        player2Image.removeEventListener('click', player2ClickHandler);
+    }
+
     function player1ClickHandler() {
         if (!player1Clicked) {
             addNameActive(player1Name, player2Name);
@@ -72,16 +79,18 @@ document.addEventListener('DOMContentLoaded', function () {
             player1Clicked = true;
         } else {
             changeImageSource(player1Image, closedBox);
-            carrotFound = false;
+            removeFunctionalities();
             msg.innerHTML = `
-            Box closed! ${player1Name.value}, keep your eyes closed!
+            Box closed! ${player2Name.value} open your eyes!
             <br>
-            <p class="fs-5">Try another box!</p>
+            <p class="fs-5">What will you do?</p>
                 
             `
             player1Clicked = false;
         }
+        console.log(carrotFound);
     }
+
 
     function player2ClickHandler() {
         if (!player2Clicked) {
@@ -91,14 +100,15 @@ document.addEventListener('DOMContentLoaded', function () {
             player2Clicked = true;
         } else {
             changeImageSource(player2Image, closedBox);
-            carrotFound = false;
+            removeFunctionalities();
             msg.innerHTML = `
-            Box closed! ${player1Name.value}, keep your eyes closed!
+            Box closed! ${player1Name.value} open your eyes!
             <br>
-            <p class="fs-5">Try another box!</p>    
+            <p class="fs-5">What will you do?</p>
             `
             player2Clicked = false;
         }
+        console.log(carrotFound);
     }
 
     player1Image.addEventListener('click', player1ClickHandler);
