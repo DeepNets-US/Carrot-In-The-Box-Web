@@ -32,10 +32,7 @@ const
         str.style.color = selRand(colors);
         str.style.fontSize = selRand(fsize);
         document.body.appendChild(str);
-        //console.log(rand(0, 3));
         const fs = 10 + 5 * parseFloat(getComputedStyle(str).fontSize);
-        //console.log(vh, y, fs);
-        //console.log((y+fs)>vh?vh-y:fs);
         str.animate({
             translate: `0 ${(y + fs) > vh ? vh - y : fs}px`,
             opacity: 0,
