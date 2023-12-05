@@ -33,6 +33,7 @@
 }
 
 /* Name Buttons */
+.swapKeep,
 .carrotBoxes,
 .playerNames {
     display: flex;
@@ -62,4 +63,9 @@
 
 .activename {
     border-bottom: 10px solid #F1DDCF;
+}
+
+/* Swap and Keep OPtions */
+.swapKeep {
+    padding: 10px;
 }
