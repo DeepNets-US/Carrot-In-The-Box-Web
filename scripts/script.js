@@ -27,10 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let player1Clicked = false;
     let player2Clicked = false;
 
-    // Set the player names
-    const player1DisplayName = player1Name.value.trim().length > 1 ? player1Name.value : 'Player 1';
-    const player2DisplayName = player2Name.value.trim().length > 1 ? player2Name.value : 'Player 2';
-
     // Function for Swap and Keep Buttons
     function showButtons() {
         swapKeep.classList.add('visible');
@@ -146,6 +142,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // A function to display the result of the game 
     function gameResult() {
+
+        // Set the player names
+        const player1DisplayName = player1Name.value.trim().length > 1 ? player1Name.value : 'Player 1';
+        const player2DisplayName = player2Name.value.trim().length > 1 ? player2Name.value : 'Player 2';
+
         console.log(player1Clicked, player2Clicked, carrotFound);
         hideButtons();
 
