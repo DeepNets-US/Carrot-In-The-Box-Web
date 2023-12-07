@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let player2Clicked = false;
 
     // Set the player names
-    const player1DisplayName = player1Name.value.trim().length > 0 ? player1Name.value : 'Player 1';
-    const player2DisplayName = player2Name.value.trim().length > 0 ? player2Name.value : 'Player 2';
+    const player1DisplayName = player1Name.value.trim().length > 1 ? player1Name.value : 'Player 1';
+    const player2DisplayName = player2Name.value.trim().length > 1 ? player2Name.value : 'Player 2';
 
     // Function for Swap and Keep Buttons
     function showButtons() {
