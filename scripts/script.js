@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let player1Clicked = false;
     let player2Clicked = false;
 
+    // Set the player names
+    const player1DisplayName = player1Name.value.trim().length > 0 ? player1Name.value : 'Player 1';
+    const player2DisplayName = player2Name.value.trim().length > 0 ? player2Name.value : 'Player 2';
+
     // Function for Swap and Keep Buttons
     function showButtons() {
         swapKeep.classList.add('visible');
@@ -105,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <p class="fs-5">What will you do?</p>
             `
             boxClosed = true;
-            player1Clicked = false;
         }
         if (boxClosed) {
             showButtons();
@@ -130,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
             <p class="fs-5">What will you do?</p>
             `
             boxClosed = true;
-            player2Clicked = false;
         }
         if (boxClosed) {
             showButtons();
@@ -139,16 +141,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // A function to display the result of the game 
     function gameResult() {
+        console.log(player1Clicked, player2Clicked, carrotFound);
+        hideButtons();
+
         if (player1Clicked && carrotFound) {
-            msg.innerHTML = "Player 1 Won!";
+            msg.innerHTML = `
+            ${(player1DisplayName)} got the carrot!
+            <br>
+            <p class="fs-5">${player2DisplayName}, Better luck next time!!</p>
+            `;
         } else {
-            msg.innerHTML = "Player 2 Won!";
+            msg.innerHTML = `
+            ${player2DisplayName} got the carrot!
+            <br>
+            <p class="fs-5">${player1DisplayName}, Better luck next time!!</p>
+            `;
         }
     }
 
+    // Function to swap the boxes
     function swapBoxes() {
-        carrotFound != carrotFound;
+        console.log(carrotFound);
+        carrotFound = !carrotFound;
         gameResult();
     }
 
