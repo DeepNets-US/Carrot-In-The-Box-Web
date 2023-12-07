@@ -31,6 +31,9 @@
         height: 300px;
     }
 
+    .swapKeep button {
+        font-size: 1em;
+    }
 
 }
 
