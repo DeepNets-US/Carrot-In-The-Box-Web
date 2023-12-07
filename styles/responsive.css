@@ -1,5 +1,10 @@
 @media (max-width: 800px) {
 
+    .swapKeep button {
+        width: 40% !important;
+    }
+
+
     .typing-demo {
         width: 70%;
     }
@@ -15,7 +20,7 @@
     .howtoplay li {
         font-size: 1em !important;
     }
-    
+
     .nameInput {
         font-size: 1.1em !important;
     }
