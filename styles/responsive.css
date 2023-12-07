@@ -24,6 +24,14 @@
     .nameInput {
         font-size: 1.1em !important;
     }
+
+    #player1Box,
+    #player2Box {
+        width: auto;
+        height: 100px;
+    }
+
+
 }
 
 /* Responsive Behavior */
