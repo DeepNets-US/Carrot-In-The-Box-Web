@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Get the audios
+    const click = document.getElementById("click");
+    const bubble = document.getElementById("bubble");
+
     // Get the Image Outputs
     const player1Image = document.getElementById("player1Box");
     const player2Image = document.getElementById("player2Box");
@@ -94,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function player1ClickHandler() {
+        click.play();
         if (!player1Clicked) {
             addNameActive(player1Name, player2Name);
             player2Image.removeEventListener('click', player2ClickHandler);
@@ -118,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function player2ClickHandler() {
+        click.play();
         if (!player2Clicked) {
             addNameActive(player2Name, player1Name);
             player1Image.removeEventListener('click', player1ClickHandler);
@@ -142,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // A function to display the result of the game 
     function gameResult() {
-
+        bubble.play();
         // Set the player names
         const player1DisplayName = player1Name.value.trim().length > 1 ? player1Name.value : 'Player 1';
         const player2DisplayName = player2Name.value.trim().length > 1 ? player2Name.value : 'Player 2';
