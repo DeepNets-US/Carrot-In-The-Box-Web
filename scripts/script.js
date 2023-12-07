@@ -153,25 +153,44 @@ document.addEventListener('DOMContentLoaded', function () {
         const player1DisplayName = player1Name.value.trim().length > 1 ? player1Name.value : 'Player 1';
         const player2DisplayName = player2Name.value.trim().length > 1 ? player2Name.value : 'Player 2';
 
-        console.log(player1Clicked, player2Clicked, carrotFound);
         hideButtons();
 
-        if (player1Clicked && carrotFound) {
-            msg.innerHTML = `
-            ${(player1DisplayName)} got the carrot!
-            <br>
-            <p class="fs-5">${player2DisplayName}, Better luck next time!!</p>
-            `;
-            player1Image.src = carrotBox;
-            player2Image.src = emptyBox;
-        } else {
-            msg.innerHTML = `
-            ${player2DisplayName} got the carrot!
-            <br>
-            <p class="fs-5">${player1DisplayName}, Better luck next time!!</p>
-            `;
-            player2Image.src = carrotBox;
-            player1Image.src = emptyBox;
+        if (player1Clicked) {
+            if (carrotFound) {
+                msg.innerHTML = `
+                ${player1DisplayName} got the carrot!
+                <br>
+                <p class="fs-5">${player2DisplayName}, Better luck next time!!</p>
+                `;
+                player1Image.src = carrotBox;
+                player2Image.src = emptyBox;
+            } else {
+                msg.innerHTML = `
+                ${player2DisplayName} got the carrot!
+                <br>
+                <p class="fs-5">${player1DisplayName}, Better luck next time!!</p>
+                `;
+                player2Image.src = carrotBox;
+                player1Image.src = emptyBox;
+            }
+        } else if (player2Clicked) {
+            if (carrotFound) {
+                msg.innerHTML = `
+                ${player2DisplayName} got the carrot!
+                <br>
+                <p class="fs-5">${player1DisplayName}, Better luck next time!!</p>
+                `;
+                player1Image.src = emptyBox;
+                player2Image.src = carrotBox;
+            } else {
+                msg.innerHTML = `
+                ${player1DisplayName} got the carrot!
+                <br>
+                <p class="fs-5">${player2DisplayName}, Better luck next time!!</p>
+                `;
+                player1Image.src = carrotBox;
+                player2Image.src = emptyBox;
+            }
         }
     }
 
