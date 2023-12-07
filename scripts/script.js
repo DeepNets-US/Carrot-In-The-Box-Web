@@ -38,9 +38,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function hideButtons() {
-        swapKeep.classList.remove('visible');
-        swapKeep.classList.add('hidden');
+        setTimeout(function () {
+            swapKeep.classList.remove('visible');
+            swapKeep.classList.add('hidden');
+        }, 500);
     }
+
 
     // Function to change the image source
     function changeImageSource(imageElement, newSource) {
