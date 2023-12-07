@@ -152,12 +152,16 @@ document.addEventListener('DOMContentLoaded', function () {
             <br>
             <p class="fs-5">${player2DisplayName}, Better luck next time!!</p>
             `;
+            player1Image.src = carrotBox;
+            player2Image.src = emptyBox;
         } else {
             msg.innerHTML = `
             ${player2DisplayName} got the carrot!
             <br>
             <p class="fs-5">${player1DisplayName}, Better luck next time!!</p>
             `;
+            player2Image.src = carrotBox;
+            player1Image.src = emptyBox;
         }
     }
 

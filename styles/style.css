@@ -74,11 +74,8 @@
     display: inline-flexbox;
 }
 
-.swapKeep {
-    padding: 10px;
-}
-
-.swapKeep:button {
+.swapKeep button {
+    width: 20%;
     margin: auto;
 }
 
