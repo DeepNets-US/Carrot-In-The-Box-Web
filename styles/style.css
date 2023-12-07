@@ -65,7 +65,36 @@
     border-bottom: 10px solid #F1DDCF;
 }
 
-/* Swap and Keep OPtions */
+/* Swap and Keep Options */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inline-flexbox;
+}
+
 .swapKeep {
     padding: 10px;
+}
+
+.swapKeep:button {
+    margin: auto;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation properties */
+.swapKeep.visible {
+    animation: slideDown 0.5s ease-in-out forwards;
 }

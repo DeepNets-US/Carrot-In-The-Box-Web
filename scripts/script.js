@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const player1Image = document.getElementById("player1Box");
     const player2Image = document.getElementById("player2Box");
 
+    // Get the Swap and Keep buttons
+    const swapKeep = document.querySelector('.swapKeep');
+    const swapbtn = document.getElementById("swapbtn");
+    const keepbtn = document.getElementById('keepbtn');
+
     // Get the message Output
     const msg = document.getElementById("msg");
 
@@ -15,11 +20,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const closedBox = "../Images/Boxes/close.png"
     const carrotBox = '../Images/Boxes/carrot.png';
     const emptyBox = '../Images/Boxes/empty.png';
+    let boxClosed = false;
 
     // Game Variables
     let carrotFound = false;
     let player1Clicked = false;
     let player2Clicked = false;
+
+    // Function for Swap and Keep Buttons
+    function showButtons() {
+        swapKeep.classList.add('visible');
+        swapKeep.classList.remove('hidden');
+    }
+
+    function hideButtons() {
+        swapKeep.classList.remove('visible');
+        swapKeep.classList.add('hidden');
+    }
 
     // Function to change the image source
     function changeImageSource(imageElement, newSource) {
@@ -54,9 +71,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 <br>
                 <p class="fs-5">What will you do?</p>
                 
+                boxClosed = true;
             `
         }
     }
+
 
     // Function to add the 'activename' class
     function addNameActive(addElem, removeElem) {
@@ -84,11 +103,15 @@ document.addEventListener('DOMContentLoaded', function () {
             Box closed! ${player2Name.value} open your eyes!
             <br>
             <p class="fs-5">What will you do?</p>
-                
             `
+            boxClosed = true;
             player1Clicked = false;
         }
-        console.log(carrotFound);
+        if (boxClosed) {
+            showButtons();
+        } else {
+            hideButtons();
+        }
     }
 
 
@@ -106,12 +129,32 @@ document.addEventListener('DOMContentLoaded', function () {
             <br>
             <p class="fs-5">What will you do?</p>
             `
+            boxClosed = true;
             player2Clicked = false;
         }
-        console.log(carrotFound);
+        if (boxClosed) {
+            showButtons();
+        } else {
+            hideButtons();
+        }
+    }
+
+    function gameResult() {
+        if (player1Clicked && carrotFound) {
+            msg.innerHTML = "Player 1 Won!";
+        } else {
+            msg.innerHTML = "Player 2 Won!";
+        }
+    }
+
+    function swapBoxes() {
+        carrotFound != carrotFound;
+        gameResult();
     }
 
     player1Image.addEventListener('click', player1ClickHandler);
     player2Image.addEventListener('click', player2ClickHandler);
+    swapbtn.addEventListener('click', swapBoxes);
+    keepbtn.addEventListener('click', gameResult);
 
 });
